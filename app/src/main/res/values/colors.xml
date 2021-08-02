@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="blue">#2196F3</color>
+
+    <color name="underline">#BDB8B8</color>
 </resources>

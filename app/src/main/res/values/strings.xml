@@ -4,4 +4,7 @@
     <string name="title_home">Inicio</string>
     <string name="title_dashboard">Tus pedidos</string>
     <string name="title_notifications">Notificaciones</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
