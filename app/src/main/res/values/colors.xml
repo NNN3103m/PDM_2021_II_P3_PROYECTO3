@@ -24,4 +24,18 @@
     <color name="blue">#2196F3</color>
 
     <color name="underline">#BDB8B8</color>
+
+    <color name="cacique_yellow">#fbf715</color>
+    <color name="cacique_red">#df000c</color>
+    <color name="cacique_blue">#0168f5</color>
+    <color name="cacique_orange">#ef8a39</color>
+    <color name="cacique_brown">#40613710</color>
+
+    <color name="cacique_primary">#fff176</color>
+    <color name="cacique_primary_light">#ffffa8</color>
+    <color name="cacique_secondary">#ffd54f</color>
+    <color name="cacique_secondary_light">#ffff81</color>
+    <color name="cacique_text">#e65100</color>
+
+
 </resources>

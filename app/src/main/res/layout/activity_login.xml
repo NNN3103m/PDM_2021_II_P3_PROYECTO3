@@ -53,7 +53,9 @@
         app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_userPassword"
-        app:layout_constraintVertical_bias="0.854" />
+        app:layout_constraintVertical_bias="0.854"
+        android:textStyle="bold"
+        app:backgroundTint="@color/black" />
 
     <Button
         android:id="@+id/btnregister"
@@ -71,7 +73,9 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_userPassword"
-        app:layout_constraintVertical_bias="0.737" />
+        app:layout_constraintVertical_bias="0.737"
+        android:textStyle="bold"
+        app:backgroundTint="@color/black" />
 
     <ImageView
         android:id="@+id/imageView"
