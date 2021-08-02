@@ -16,30 +16,30 @@ class LoginActivity : AppCompatActivity() {
         btnlogin.setOnClickListener{
             valempty()
             validateCreds()
-            val intent = Intent(this, MainMenuActivity::class.java)
-            startActivity(intent)
         }
         btnregister.setOnClickListener{
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
     }
+
+    fun valempty(){
+        val usermail = txt_userEmail.text.toString()
+        val userpassword = txt_userEmail.text.toString()
+        if (usermail.length == 0 || userpassword.length == 0){
+            Toast.makeText(this,"Debe ingresar un correo y una clave.", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    fun validateCreds(){
+        var usermail = txt_userEmail.text.toString()
+        var userpassword = txt_userEmail.text.toString()
+        if (usermail == "admin" || userpassword == "admin"){
+            val intent = Intent(this, MainMenuActivity::class.java)
+            startActivity(intent)
+        } else {
+            Toast.makeText(this,"Credenciales inválidas. Intenta nuevamente.", Toast.LENGTH_SHORT).show()
+        }
+    }
 }
 
-fun valempty(){
-//    val usermail = txt_userEmail.text.toString().lowercase(Locale.getDefault())
-//    val user_mail = txt_userEmail.text.toString().trim().lowercase(Locale.getDefault())
-//    if (user_mail.length == 0){
-//        Toast.makeText(this,"Debe ingresar una letra.", Toast.LENGTH_SHORT).show()
-}
-
-fun validateCreds(){
-
-
-//    if (usermail.text = "" || userpassword = ""){
-//        intent
-//        start activity
-//    } else {
-//        Toast.makeText(, "Credenciales equivocadas, intenta nuevamente", Toast.LENGTH_SHORT).show()
-//    }
-}
