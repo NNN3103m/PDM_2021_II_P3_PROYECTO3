@@ -71,6 +71,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
+        android:clickable="true"
         android:id="@+id/imageFFood"
         android:layout_width="125dp"
         android:layout_height="147dp"
