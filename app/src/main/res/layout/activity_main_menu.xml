@@ -23,25 +23,34 @@
         android:layout_width="411dp"
         android:layout_height="145dp"
         android:background="@color/cacique_yellow"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:padding="16dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-2dp">
 
-    </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/profileButton"
-        android:layout_width="112dp"
-        android:layout_height="94dp"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="16dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        <ImageButton
+            android:id="@+id/profileButton"
+            android:layout_width="112dp"
+            android:layout_height="94dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="fitXY"
+            tools:ignore="MissingConstraints"
+            tools:srcCompat="@drawable/ic_logo" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="35dp"
+            app:srcCompat="@drawable/ic_baseline_dehaze_24" />
+    </LinearLayout>
 
     <fragment
         android:id="@+id/nav_host_fragment_activity_main_menu"
@@ -52,7 +61,7 @@
         app:navGraph="@navigation/mobile_navigation"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="5dp" />
+        tools:layout_editor_absoluteY="-2dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
