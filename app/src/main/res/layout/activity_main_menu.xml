@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize">
+    android:layout_height="match_parent">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
@@ -20,15 +19,16 @@
         app:menu="@menu/bottom_nav_menu" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/linearLayout"
         android:layout_width="411dp"
         android:layout_height="145dp"
         android:background="@color/blue"
         android:orientation="vertical"
         android:padding="16dp"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="-57dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-2dp">
+
     </LinearLayout>
 
     <ImageButton
@@ -51,8 +51,7 @@
         app:navGraph="@navigation/mobile_navigation"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-55dp" />
-
+        tools:layout_editor_absoluteY="5dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

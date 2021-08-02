@@ -7,16 +7,87 @@
     tools:context=".ui.home.HomeFragment">
 
     <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
+        android:id="@+id/textTechnology"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="Tecnología"
+        app:layout_constraintTop_toBottomOf="@+id/imageTechnology"
+        tools:layout_editor_absoluteX="271dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Hogar"
+        app:layout_constraintTop_toBottomOf="@+id/imageHome"
+        tools:layout_editor_absoluteX="93dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageTechnology"
+        android:layout_width="125dp"
+        android:layout_height="147dp"
+        android:src="@drawable/smartphone"
+        tools:layout_editor_absoluteX="245dp"
+        tools:layout_editor_absoluteY="426dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageHome"
+        android:layout_width="125dp"
+        android:layout_height="147dp"
+        android:src="@drawable/house"
+        app:layout_constraintEnd_toStartOf="@+id/imageTechnology"
+        app:layout_constraintHorizontal_bias="0.383"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="426dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageBakery"
+        android:layout_width="125dp"
+        android:layout_height="147dp"
+        android:src="@drawable/cake"
+        tools:layout_editor_absoluteX="245dp"
+        tools:layout_editor_absoluteY="197dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageFFood"
+        android:layout_width="125dp"
+        android:layout_height="147dp"
+        android:src="@drawable/ffood"
+        app:layout_constraintBottom_toTopOf="@+id/imageHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.706" />
+
+    <TextView
+        android:id="@+id/textFFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Restaurantes"
+        app:layout_constraintBottom_toTopOf="@+id/imageFFood"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.214"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageHome"
+        app:layout_constraintVertical_bias="0.498"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textBakery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Repostería"
+        app:layout_constraintBottom_toTopOf="@+id/imageBakery"
+        app:layout_constraintTop_toBottomOf="@+id/imageTechnology"
+        tools:layout_editor_absoluteX="273dp"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
