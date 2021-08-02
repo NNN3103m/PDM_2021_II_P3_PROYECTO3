@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:hint="Nombre"
-            android:text="Shrikanth Ravi" />
+            android:text="Nombre" />
 
         <TextView
             android:layout_width="match_parent"

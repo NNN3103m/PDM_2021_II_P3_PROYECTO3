@@ -1,5 +1,6 @@
 package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.restaurants
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.R
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.products.ProductsActivity
 
 class RestaurantAdapter : RecyclerView.Adapter<RestaurantAdapter.ViewHolder>() {
     private val restaurants = arrayOf(
@@ -46,6 +48,7 @@ class RestaurantAdapter : RecyclerView.Adapter<RestaurantAdapter.ViewHolder>() {
             restaurantImage = itemView.findViewById(R.id.restaurant_image)
             restaurantName = itemView.findViewById(R.id.restaurant_name)
             restaurantDetail = itemView.findViewById(R.id.restaurant_detail)
+
 
             itemView.setOnClickListener { v: View ->
                 var position: Int = getAdapterPosition()
