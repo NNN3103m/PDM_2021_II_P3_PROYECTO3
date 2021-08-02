@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:fontFamily="@font/basic"
+            android:fontFamily="sans-serif"
             android:gravity="center|start"
             android:paddingTop="3dp"
             android:text="Mi Perfil"
@@ -70,13 +70,13 @@
             android:textStyle="bold" />
 
         <TextView
-            android:paddingLeft="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/basic"
+            android:fontFamily="sans-serif"
             android:gravity="center|start"
+            android:paddingLeft="15dp"
             android:text="Nombre"
             android:textColor="@color/blue"
             android:textSize="16sp" />
@@ -85,18 +85,18 @@
             android:id="@+id/txt_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Shrikanth Ravi"
-            android:fontFamily="@font/basic"
-            android:hint="Nombre" />
+            android:fontFamily="sans-serif"
+            android:hint="Nombre"
+            android:text="Shrikanth Ravi" />
 
         <TextView
-            android:paddingLeft="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/basic"
+            android:fontFamily="sans-serif"
             android:gravity="center|start"
+            android:paddingLeft="15dp"
             android:text="Email"
             android:textColor="@color/blue"
             android:textSize="16sp" />
@@ -105,18 +105,18 @@
             android:id="@+id/txt_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="email"
-            android:fontFamily="@font/basic"
-            android:hint="Nombre" />
+            android:fontFamily="sans-serif"
+            android:hint="Nombre"
+            android:text="email" />
 
         <TextView
-            android:paddingLeft="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/basic"
+            android:fontFamily="sans-serif"
             android:gravity="center|start"
+            android:paddingLeft="15dp"
             android:text="Cel/Tel"
             android:textColor="@color/blue"
             android:textSize="16sp" />
@@ -126,18 +126,18 @@
             android:id="@+id/txt_phone_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cel/Tel"
-            android:fontFamily="@font/basic"
-            android:hint="Cel/Tel" />
+            android:fontFamily="sans-serif"
+            android:hint="Cel/Tel"
+            android:text="Cel/Tel" />
 
         <TextView
-            android:paddingLeft="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/basic"
+            android:fontFamily="sans-serif"
             android:gravity="center|start"
+            android:paddingLeft="15dp"
             android:text="Contraseña"
             android:textColor="@color/blue"
             android:textSize="16sp" />
@@ -147,20 +147,20 @@
             android:id="@+id/txt_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Contraseña"
-            android:fontFamily="@font/basic"
-            android:hint="Contraseña" />
+            android:fontFamily="sans-serif"
+            android:hint="Contraseña"
+            android:text="Contraseña" />
 
         <Button
             android:id="@+id/button_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/basic"
+            android:fontFamily="sans-serif"
             android:text="Actualizar"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:backgroundTint="@color/black"/>
+            app:backgroundTint="@color/black" />
 
     </LinearLayout>
 
