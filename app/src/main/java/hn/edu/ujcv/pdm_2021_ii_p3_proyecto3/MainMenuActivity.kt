@@ -35,6 +35,25 @@ class MainMenuActivity : AppCompatActivity() {
             )
         )
 
+//        ImageHandlers
+
+        imageFFood.setOnClickListener{
+            val intent = Intent(this, RestaurantActivity::class.java)
+            startActivity(intent)
+        }
+        imageBakery.setOnClickListener{
+            val intent = Intent(this, RestaurantActivity::class.java)
+            startActivity(intent)
+        }
+        imageHome.setOnClickListener{
+            val intent = Intent(this, RestaurantActivity::class.java)
+            startActivity(intent)
+        }
+        imageTechnology.setOnClickListener{
+            val intent = Intent(this, RestaurantActivity::class.java)
+            startActivity(intent)
+        }
+
         profileButton.setOnClickListener{
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)

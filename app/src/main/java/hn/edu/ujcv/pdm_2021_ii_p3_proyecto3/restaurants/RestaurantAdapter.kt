@@ -19,19 +19,19 @@ class RestaurantAdapter : RecyclerView.Adapter<RestaurantAdapter.ViewHolder>() {
     )
 
     private val details = arrayOf(
-        "",
-        "",
-        "",
-        "",
-        ""
+        "Apertura: 8:00 AM | Cierre: 9:00 PM",
+        "Apertura: 8:00 AM | Cierre: 9:00 PM",
+        "Apertura: 8:00 AM | Cierre: 9:00 PM",
+        "Apertura: 8:00 AM | Cierre: 9:00 PM",
+        "Apertura: 8:00 AM | Cierre: 9:00 PM"
 
     )
     private val images = intArrayOf(
-        R.drawable.house,
-        R.drawable.house,
-        R.drawable.house,
-        R.drawable.house,
-        R.drawable.house
+        R.drawable.restaurant,
+        R.drawable.restaurant,
+        R.drawable.restaurant,
+        R.drawable.restaurant,
+        R.drawable.restaurant
     )
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(viewGroup.context)

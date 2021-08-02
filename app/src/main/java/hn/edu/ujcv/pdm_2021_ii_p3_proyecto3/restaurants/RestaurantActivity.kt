@@ -19,7 +19,7 @@ class RestaurantActivity : AppCompatActivity() {
         setContentView(R.layout.activity_restaurant)
 
 
-        exam_toollbar.title = "Examen Segundo Parcial"
+        exam_toollbar.title = "Comercios"
         exam_toollbar.setContentScrimColor(Color.DKGRAY)
 
 
