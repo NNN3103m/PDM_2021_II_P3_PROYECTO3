@@ -16,9 +16,9 @@ class ContactActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        button_register.setOnClickListener {
-            valempty()
-        }
+//        button_register.setOnClickListener {
+//            valempty()
+//        }
 
 
     }
@@ -29,16 +29,16 @@ class ContactActivity : AppCompatActivity() {
 //        val userDir = txt_new_direction.text.toString()
 //        val userPhone = txt_new_phone_number.text.toString()
 
-        when{
-            txt_new_name.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Nombre", Toast.LENGTH_SHORT).show()
-            txt_new_email.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Email", Toast.LENGTH_SHORT).show()
-            txt_new_direction.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Direccion", Toast.LENGTH_SHORT).show()
-            txt_new_phone_number.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Numero de Telefono", Toast.LENGTH_SHORT).show()
-            else -> {
-                val intent = Intent(this, LoginActivity::class.java)
-                Toast.makeText(this,"Registrado exitosamete, por favor inicie sesion", Toast.LENGTH_LONG).show()
-                startActivity(intent)
-            }
-        }
+//        when{
+//            txt_new_name.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Nombre", Toast.LENGTH_SHORT).show()
+//            txt_new_email.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Email", Toast.LENGTH_SHORT).show()
+//            txt_new_direction.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Direccion", Toast.LENGTH_SHORT).show()
+//            txt_new_phone_number.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Numero de Telefono", Toast.LENGTH_SHORT).show()
+//            else -> {
+//                val intent = Intent(this, LoginActivity::class.java)
+//                Toast.makeText(this,"Registrado exitosamete, por favor inicie sesion", Toast.LENGTH_LONG).show()
+//                startActivity(intent)
+//            }
+//        }
     }
 }
