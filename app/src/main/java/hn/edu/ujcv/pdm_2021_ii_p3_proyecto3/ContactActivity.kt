@@ -16,7 +16,7 @@ class ContactActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        button_register.setOnClickListener {
+        button_contact.setOnClickListener {
             valempty()
         }
 
@@ -30,13 +30,13 @@ class ContactActivity : AppCompatActivity() {
 //        val userPhone = txt_new_phone_number.text.toString()
 
         when{
-            txt_new_name.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Nombre", Toast.LENGTH_SHORT).show()
-            txt_new_email.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Email", Toast.LENGTH_SHORT).show()
-            txt_new_direction.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Direccion", Toast.LENGTH_SHORT).show()
-            txt_new_phone_number.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Numero de Telefono", Toast.LENGTH_SHORT).show()
+            txt_new_nombre.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Nombre", Toast.LENGTH_SHORT).show()
+            txt_new_correo.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Email", Toast.LENGTH_SHORT).show()
+            txt_new_mensaje.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Mensaje", Toast.LENGTH_SHORT).show()
+
             else -> {
                 val intent = Intent(this, LoginActivity::class.java)
-                Toast.makeText(this,"Registrado exitosamete, por favor inicie sesion", Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"envio", Toast.LENGTH_LONG).show()
                 startActivity(intent)
             }
         }

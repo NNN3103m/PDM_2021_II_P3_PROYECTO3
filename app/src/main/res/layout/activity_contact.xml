@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity"
+    tools:context=".ContactActivity"
     android:orientation="vertical">
 
     <ImageView
@@ -41,7 +41,7 @@
         android:textSize="16sp" />
 
     <EditText
-        android:id="@+id/txt_new_name"
+        android:id="@+id/txt_new_nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
@@ -60,31 +60,15 @@
         android:textSize="16sp" />
 
     <EditText
-        android:id="@+id/txt_new_email"
+        android:id="@+id/txt_new_correo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
         android:hint="Email"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif"
-        android:gravity="center|start"
-        android:paddingLeft="15dp"
-        android:text="Cel/Tel"
-        android:textColor="@color/blue"
-        android:textSize="16sp" />
 
-    <EditText
 
-        android:id="@+id/txt_new_phone_number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:hint="Cel/Tel" />
+
 
 
     <TextView
@@ -95,20 +79,20 @@
         android:fontFamily="sans-serif"
         android:gravity="center|start"
         android:paddingLeft="15dp"
-        android:text="Direccion"
+        android:text="Mensaje"
         android:textColor="@color/blue"
         android:textSize="16sp" />
 
     <EditText
 
-        android:id="@+id/txt_new_direction"
+        android:id="@+id/txt_new_mensaje"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
-        android:hint="Direccion" />
+        android:hint="mensaje" />
 
     <Button
-        android:id="@+id/button_register"
+        android:id="@+id/button_contact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
