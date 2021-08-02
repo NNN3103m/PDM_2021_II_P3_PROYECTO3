@@ -8,12 +8,12 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.databinding.FragmentNotificationsBinding
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.databinding.FragmentOrderBinding
 
 class OrderFragment : Fragment() {
 
     private lateinit var orderViewModel: OrderViewModel
-    private var _binding: FragmentNotificationsBinding? = null
+    private var _binding: FragmentOrderBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -27,10 +27,10 @@ class OrderFragment : Fragment() {
         orderViewModel =
             ViewModelProvider(this).get(OrderViewModel::class.java)
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentOrderBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
+        val textView: TextView = binding.textOrder
         orderViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
