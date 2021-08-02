@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".restaurants.RestaurantActivity">
+    tools:context=".products.ProductsActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -12,7 +12,7 @@
         android:theme="@style/Theme.PDM_2021_II_P3_PROYECTO3">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/exam_toollbar"
+            android:id="@+id/products_toollbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
@@ -22,16 +22,16 @@
             app:expandedTitleMarginEnd="64dp">
 
             <ImageView
-                android:id="@+id/backdrop"
+                android:id="@+id/products_backdrop"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
                 android:fitsSystemWindows="true"
                 app:layout_collapseMode="parallax"
-                android:src="@color/cacique_blue"/>
+                android:src="@color/cacique_orange"/>
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/products_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
