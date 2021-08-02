@@ -94,7 +94,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/open_sans_semibold"
                     android:gravity="bottom"
-                    android:text="₹50"
+                    android:text="L.50"
                     android:textColor="@android:color/black"
                     android:textSize="14dp"
                     android:textStyle="bold" />

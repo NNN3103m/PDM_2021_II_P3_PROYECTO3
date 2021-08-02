@@ -4,12 +4,8 @@
     <string name="title_home">Inicio</string>
     <string name="title_dashboard">Tus pedidos</string>
     <string name="title_notifications">Notificaciones</string>
-<<<<<<< HEAD
     <string name="hint_feedback_optional">Retroalimentación (Opcional)</string>
-
-=======
 
     <string name="open">Open</string>
     <string name="close">Close</string>
->>>>>>> 6685bdda14bcd8aba76b5014ba8563cb8c53f414
 </resources>
