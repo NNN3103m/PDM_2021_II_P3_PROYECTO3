@@ -41,7 +41,7 @@ class ConnectionActivity : AppCompatActivity() {
             startActivity(intent)
         }
         button_contact_act.setOnClickListener {
-            val intent = Intent(this, ContactActivity::class.java)
+            val intent = Intent(this, ContactUsActivity::class.java)
             startActivity(intent)
         }
         button_confirm_payment_act.setOnClickListener {
