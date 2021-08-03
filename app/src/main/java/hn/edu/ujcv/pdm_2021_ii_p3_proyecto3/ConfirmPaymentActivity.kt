@@ -12,7 +12,7 @@ class ConfirmPaymentActivity : AppCompatActivity() {
         //actionbar
         val actionbar = supportActionBar
         //set actionbar title
-        actionbar!!.title = "Mi Perfil"
+        actionbar!!.title = "Bolsa"
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)

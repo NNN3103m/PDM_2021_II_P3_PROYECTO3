@@ -22,7 +22,16 @@ class ProductsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_products)
 
 
-        products_toollbar.title = "Productos"
+        //actionbar
+        val actionbar = supportActionBar
+        //set actionbar title
+        actionbar!!.title = "Productos"
+        //set back button
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
+
+
+        products_toollbar.title = "Nombre del comercio"
         products_toollbar.setContentScrimColor(Color.DKGRAY)
 
 
@@ -50,5 +59,10 @@ class ProductsActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
