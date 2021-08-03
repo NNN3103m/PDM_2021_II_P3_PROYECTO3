@@ -56,5 +56,10 @@ class ConnectionActivity : AppCompatActivity() {
             val intent = Intent(this, ProductsActivity::class.java)
             startActivity(intent)
         }
+
+        button_rating.setOnClickListener {
+            val intent = Intent(this, BottomSheetRateFood::class.java)
+            startActivity(intent)
+        }
     }
 }
