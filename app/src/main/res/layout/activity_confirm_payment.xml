@@ -28,7 +28,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/ic_logo" />
+            tools:srcCompat="@drawable/ic_logo"
+            android:background="@drawable/ic_logo"/>
 
         <ImageView
             android:id="@+id/product2"
@@ -39,7 +40,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/ic_logo" />
+            tools:srcCompat="@drawable/ic_logo"
+            android:background="@drawable/ic_logo"/>
 
         <ImageView
             android:id="@+id/product3"
@@ -50,7 +52,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/ic_logo" />
+            tools:srcCompat="@drawable/ic_logo"
+            android:background="@drawable/ic_logo"/>
 
         <TextView
             android:id="@+id/bag"
