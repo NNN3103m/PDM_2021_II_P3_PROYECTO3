@@ -9,19 +9,21 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.R
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.restaurants.RestaurantAdapter
+import kotlinx.android.synthetic.main.activity_products.*
 import kotlinx.android.synthetic.main.activity_restaurant.*
+import kotlinx.android.synthetic.main.activity_restaurant.exam_toollbar
 import kotlinx.android.synthetic.main.content_main.*
 
 class ProductsActivity : AppCompatActivity() {
     private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<RestaurantAdapter.ViewHolder>? = null
+    private var adapter: RecyclerView.Adapter<ProductsAdapter.ViewHolder>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_products)
 
 
-        exam_toollbar.title = "Productos"
-        exam_toollbar.setContentScrimColor(Color.DKGRAY)
+        products_toollbar.title = "Productos"
+        products_toollbar.setContentScrimColor(Color.DKGRAY)
 
 
 
@@ -29,7 +31,7 @@ class ProductsActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
 
 
-        adapter = RestaurantAdapter()
+        adapter = ProductsAdapter()
         recyclerView.adapter = adapter
     }
 

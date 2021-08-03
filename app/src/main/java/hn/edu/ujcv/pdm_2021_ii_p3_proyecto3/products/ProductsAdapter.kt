@@ -12,19 +12,19 @@ import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.R
 
 class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
     private val products = arrayOf(
-        "Comercio 1",
-        "Comercio 2",
-        "Comercio 3",
-        "Comercio 4",
-        "Comercio 5"
+        "Producto 1",
+        "Producto 2",
+        "Producto 3",
+        "Producto 4",
+        "Producto 5"
     )
 
     private val products_details = arrayOf(
-        "Apertura: 8:00 AM | Cierre: 9:00 PM",
-        "Apertura: 8:00 AM | Cierre: 9:00 PM",
-        "Apertura: 8:00 AM | Cierre: 9:00 PM",
-        "Apertura: 8:00 AM | Cierre: 9:00 PM",
-        "Apertura: 8:00 AM | Cierre: 9:00 PM"
+        "Manzanas",
+        "Peras",
+        "Melones",
+        "Nances",
+        "Mangos"
 
     )
     private val products_images = intArrayOf(
@@ -36,7 +36,7 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
     )
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.card_layout,viewGroup, false)
+            .inflate(R.layout.card_layout_products,viewGroup, false)
         return ViewHolder(v)
     }
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
@@ -44,9 +44,9 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
         var productsName: TextView
         var productsDetail: TextView
         init {
-            productsImage = itemView.findViewById(R.id.restaurant_image)
-            productsName = itemView.findViewById(R.id.restaurant_name)
-            productsDetail = itemView.findViewById(R.id.restaurant_detail)
+            productsImage = itemView.findViewById(R.id.product_image)
+            productsName = itemView.findViewById(R.id.product_name)
+            productsDetail = itemView.findViewById(R.id.product_detail)
 
             itemView.setOnClickListener { v: View ->
                 var position: Int = getAdapterPosition()
