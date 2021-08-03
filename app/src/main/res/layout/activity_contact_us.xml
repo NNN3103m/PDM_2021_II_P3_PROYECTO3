@@ -4,26 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContactUsActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ContactUsActivity">
 
 
     <ImageView
         android:id="@+id/ctcImage"
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="0dp"
         android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="13dp"
         android:paddingTop="15dp"
         android:src="@drawable/ic_user"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/ctcText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/ctcText"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
+        android:layout_marginBottom="58dp"
         android:fontFamily="sans-serif"
         android:gravity="center|start"
         android:paddingTop="3dp"
@@ -32,39 +37,47 @@
         android:textColor="@android:color/black"
         android:textSize="32sp"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="129dp" />
+        app:layout_constraintBottom_toTopOf="@+id/ctcNameText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ctcImage"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/ctcNameText"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
+        android:layout_marginBottom="10dp"
         android:fontFamily="sans-serif"
         android:gravity="center|start"
         android:paddingLeft="15dp"
         android:text="Nombre"
         android:textColor="@color/blue"
         android:textSize="16sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-35dp"
-        tools:layout_editor_absoluteY="233dp" />
+        app:layout_constraintBottom_toTopOf="@+id/ctcName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ctcText"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/ctcName"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
         android:fontFamily="sans-serif"
         android:hint="Nombre"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="264dp" />
+        app:layout_constraintBottom_toTopOf="@+id/ctcEmailText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ctcNameText"
+        tools:ignore="MissingConstraints" />
 
 
     <TextView
         android:id="@+id/ctcEmailText"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:fontFamily="sans-serif"
@@ -73,57 +86,71 @@
         android:text="Email"
         android:textColor="@color/blue"
         android:textSize="16sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="328dp" />
+        app:layout_constraintBottom_toTopOf="@+id/ctcEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ctcName"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/ctcEmail"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
         android:fontFamily="sans-serif"
         android:hint="Email"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="350dp" />
+        app:layout_constraintBottom_toTopOf="@+id/ctcMssgText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ctcEmailText"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/ctcMssgText"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
+        android:layout_marginBottom="7dp"
         android:fontFamily="sans-serif"
         android:gravity="center|start"
         android:paddingLeft="15dp"
         android:text="Mensaje"
         android:textColor="@color/blue"
         android:textSize="16sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="413dp" />
+        app:layout_constraintBottom_toTopOf="@+id/ctcMssg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ctcEmail"
+        tools:ignore="MissingConstraints" />
 
     <EditText
 
         android:id="@+id/ctcMssg"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
         android:fontFamily="sans-serif"
         android:hint="mensaje"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="441dp" />
+        app:layout_constraintBottom_toTopOf="@+id/ctcBtnSend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ctcMssgText"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/ctcBtnSend"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="46dp"
         android:fontFamily="sans-serif"
         android:text="Enviar mensaje"
         android:textSize="18sp"
         android:textStyle="bold"
         app:backgroundTint="@color/black"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="510dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ctcMssg"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
