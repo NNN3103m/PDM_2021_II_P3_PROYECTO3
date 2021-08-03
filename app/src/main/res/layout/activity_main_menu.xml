@@ -22,7 +22,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="411dp"
         android:layout_height="145dp"
-        android:background="@color/cacique_yellow"
+        android:background="@color/cacique_brown"
         android:orientation="horizontal"
         android:padding="16dp"
         tools:ignore="MissingConstraints"
@@ -37,6 +37,7 @@
             android:layout_marginTop="16dp"
             android:scaleType="fitXY"
             tools:ignore="MissingConstraints"
+            android:background="@drawable/ic_logo"
             tools:srcCompat="@drawable/ic_logo" />
         <View
             android:layout_width="0dp"

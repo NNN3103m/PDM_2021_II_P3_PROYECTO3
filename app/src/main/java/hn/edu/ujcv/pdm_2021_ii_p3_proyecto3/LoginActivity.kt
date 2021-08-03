@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.test.ConnectionActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import java.util.*
 
@@ -19,6 +20,11 @@ class LoginActivity : AppCompatActivity() {
         }
         btnregister.setOnClickListener{
             val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
+        btntest.setOnClickListener{
+            val intent = Intent(this, ConnectionActivity::class.java)
             startActivity(intent)
         }
     }
