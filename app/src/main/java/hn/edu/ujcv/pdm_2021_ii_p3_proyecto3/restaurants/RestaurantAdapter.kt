@@ -62,6 +62,12 @@ class RestaurantAdapter : RecyclerView.Adapter<RestaurantAdapter.ViewHolder>() {
         viewHolder.restaurantName.text = restaurants[position]
         viewHolder.restaurantDetail.text = details[position]
         viewHolder.restaurantImage.setImageResource(images[position])
+
+        /// Esto codigo de abajo fue el unico cambio que hice
+        viewHolder.itemView.setOnClickListener { v ->
+            val intent = Intent(v.context, ProductsActivity::class.java)
+            v.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
