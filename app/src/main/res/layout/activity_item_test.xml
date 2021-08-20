@@ -7,7 +7,7 @@
     tools:context=".TestActivity">
 
   <Button
-      android:id="@+id/getTestBtn"
+      android:id="@+id/getItemBtn"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="Get"
@@ -19,7 +19,7 @@
       app:layout_constraintVertical_bias="0.809" />
 
   <Button
-      android:id="@+id/addTestBtn"
+      android:id="@+id/addItemBtn"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="Add"
@@ -31,7 +31,7 @@
       app:layout_constraintVertical_bias="0.809" />
 
   <Button
-      android:id="@+id/updateTestBtn"
+      android:id="@+id/updateItemBtn"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="Update"
@@ -43,7 +43,7 @@
       app:layout_constraintVertical_bias="0.809" />
 
   <Button
-      android:id="@+id/deleteTestBtn"
+      android:id="@+id/deleteItemBtn"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="Delete"
@@ -60,7 +60,7 @@
       android:layout_height="59dp"
       android:ems="10"
       android:inputType="textPersonName"
-      android:text="Test CRUD"
+      android:text="Item CRUD"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.497"

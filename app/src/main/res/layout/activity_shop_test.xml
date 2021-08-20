@@ -7,7 +7,7 @@
     tools:context=".TestActivity">
 
   <Button
-      android:id="@+id/getTestBtn"
+      android:id="@+id/getShopBtn"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="Get"
@@ -19,19 +19,19 @@
       app:layout_constraintVertical_bias="0.809" />
 
   <Button
-      android:id="@+id/addTestBtn"
+      android:id="@+id/deleteShopBtn"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Add"
+      android:text="Delete"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.349"
+      app:layout_constraintHorizontal_bias="0.95"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_bias="0.809" />
 
   <Button
-      android:id="@+id/updateTestBtn"
+      android:id="@+id/updateShopBtn"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="Update"
@@ -43,13 +43,13 @@
       app:layout_constraintVertical_bias="0.809" />
 
   <Button
-      android:id="@+id/deleteTestBtn"
+      android:id="@+id/addShopBtn"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Delete"
+      android:text="Add"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.95"
+      app:layout_constraintHorizontal_bias="0.349"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_bias="0.809" />
@@ -60,7 +60,7 @@
       android:layout_height="59dp"
       android:ems="10"
       android:inputType="textPersonName"
-      android:text="Test CRUD"
+      android:text="Shop CRUD"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.497"
