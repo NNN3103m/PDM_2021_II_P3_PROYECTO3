@@ -35,11 +35,6 @@ class RegisterActivity : AppCompatActivity() {
 
     }
     fun valempty(){
-//        val userName = txt_new_name.text.toString()
-//        val userPassword = txt_new_password.text.toString()
-//        val userMail = txt_new_email.text.toString()
-//        val userDir = txt_new_direction.text.toString()
-//        val userPhone = txt_new_phone_number.text.toString()
 
         when{
             txt_new_name.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Nombre", Toast.LENGTH_SHORT).show()
@@ -61,7 +56,7 @@ class RegisterActivity : AppCompatActivity() {
     // Services Call
 
     //    Add customer method
-    fun addCustomer(customerData: CustomerDataCollectionItem, onResult: (CustomerDataCollectionItem?) -> Unit){
+    private fun addCustomer(customerData: CustomerDataCollectionItem, onResult: (CustomerDataCollectionItem?) -> Unit){
         val retrofit = RestEngine.buildService().create(CustomerService::class.java)
         var result: Call<CustomerDataCollectionItem> = retrofit.addCustomer(customerData)
 
@@ -105,7 +100,7 @@ class RegisterActivity : AppCompatActivity() {
 //  ^^ Agregar controllers text de captura de datos
 
         addCustomer(customerInfo){ if (it?.id != null){
-            Toast.makeText(this@RegisterActivity, "OK"+it?.id, Toast.LENGTH_LONG).show()
+            Toast.makeText(this@RegisterActivity, "OK"+ it.id, Toast.LENGTH_LONG).show()
         } else {
             Toast.makeText(this@RegisterActivity, "Error",Toast.LENGTH_LONG).show()
         }
@@ -113,25 +108,5 @@ class RegisterActivity : AppCompatActivity() {
 
 
     }
-
-//    private fun callServicePostCustomer() {
-//        val fecha = "2021-04-10"
-//        val customerInfo = CustomerDataCollectionItem(  id = null,
-//            dni = 1344,
-//            nombre = "PDM",
-//            apellido = "Kotlin",
-//            fechaNacimiento = fecha
-//        )
-//
-//        addCustomer(customerInfo) {
-//            if (it?.id != null) {
-//                Toast.makeText(this@RegisterActivity,"OK"+it?.id,Toast.LENGTH_LONG).show()
-//            } else {
-//                Toast.makeText(this@RegisterActivity,"Error",Toast.LENGTH_LONG).show()
-//            }
-//        }
-//    }
-
-
 
 }
