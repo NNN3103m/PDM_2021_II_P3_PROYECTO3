@@ -37,7 +37,7 @@ class RegisterActivity : AppCompatActivity() {
             txt_new_name.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Nombre", Toast.LENGTH_SHORT).show()
             txt_new_email.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Email", Toast.LENGTH_SHORT).show()
             txt_new_password.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Contraseña", Toast.LENGTH_SHORT).show()
-            txt_new_direction.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Direccion", Toast.LENGTH_SHORT).show()
+            txt_new_id.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Direccion", Toast.LENGTH_SHORT).show()
             txt_new_phone_number.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Numero de Telefono", Toast.LENGTH_SHORT).show()
             else -> {
                 val intent = Intent(this, LoginActivity::class.java)
