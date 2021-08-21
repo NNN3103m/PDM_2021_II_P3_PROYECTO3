@@ -1,9 +1,7 @@
 package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.gson.Gson
@@ -96,11 +94,11 @@ class RegisterActivity : AppCompatActivity() {
     private fun callServicePostCustomer(){
         val customerInfo = CustomerDataCollectionItem( id = null,
 
-             dni = findViewById(R.id.txt_new_id),
-             nombre = findViewById(R.id.txt_new_name),
-             email = findViewById(R.id.txt_new_email),
-             mobile = findViewById(R.id.txt_new_phone_number),
-             password = findViewById(R.id.txt_new_password)
+             dni = (findViewById(R.id.txt_new_id) as EditText).getText().toString(),
+             nombre = (findViewById(R.id.txt_new_name) as EditText).getText().toString(),
+             email = (findViewById(R.id.txt_new_email) as EditText).getText().toString(),
+             mobile = (findViewById(R.id.txt_new_phone_number) as EditText).getText().toString(),
+             password = (findViewById(R.id.txt_new_password) as EditText).getText().toString()
 
         )
 //  ^^ Agregar controllers text de captura de datos
