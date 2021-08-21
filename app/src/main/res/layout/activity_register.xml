@@ -101,7 +101,9 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
                 android:layout_marginTop="312dp"
-                android:hint="Contraseña" />
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                />
 
             <EditText
                 android:id="@+id/txt_new_id"
@@ -111,7 +113,8 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
                 android:layout_marginTop="12dp"
-                android:hint="Identificaión / DNI" />
+                android:inputType="number"
+                android:hint="Identificacion / DNI" />
 
             <Button
                 android:id="@+id/button_register"
