@@ -1,6 +1,6 @@
 package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3
 
-import android.telecom.Call
+import retrofit2.Call
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.entities.AddressDataCollectionItem
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.entities.CreditcardDataCollectionItem
 import okhttp3.ResponseBody
@@ -8,6 +8,7 @@ import retrofit2.http.*
 
 
 interface CreditcardService {
+
     @GET("creditcards")
     fun listCreditcards(): Call<List<CreditcardDataCollectionItem>>
 
