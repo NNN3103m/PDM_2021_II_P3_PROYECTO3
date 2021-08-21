@@ -68,7 +68,6 @@
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
-        android:id="@+id/UserPasswordContent"
         android:layout_width="400dp"
         android:layout_height="350dp"
         android:orientation="vertical"
@@ -146,14 +145,5 @@
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
-
-
-
-
-
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
