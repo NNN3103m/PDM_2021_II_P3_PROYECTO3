@@ -3,9 +3,17 @@ package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
+import com.google.gson.Gson
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.entities.CustomerDataCollectionItem
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.entities.RestApiError
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,9 +28,9 @@ class RegisterActivity : AppCompatActivity() {
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
 
-        button_register.setOnClickListener {
-            valempty()
-        }
+//        CRUD BUTTONS
+//        val registerButton = findViewById<Button>(R.id.button_register)
+        button_register.setOnClickListener { callServicePostCustomer()}
 
 
     }
@@ -37,7 +45,6 @@ class RegisterActivity : AppCompatActivity() {
             txt_new_name.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Nombre", Toast.LENGTH_SHORT).show()
             txt_new_email.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Email", Toast.LENGTH_SHORT).show()
             txt_new_password.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Contraseña", Toast.LENGTH_SHORT).show()
-            txt_new_direction.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Direccion", Toast.LENGTH_SHORT).show()
             txt_new_phone_number.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Numero de Telefono", Toast.LENGTH_SHORT).show()
             else -> {
                 val intent = Intent(this, LoginActivity::class.java)
@@ -50,4 +57,81 @@ class RegisterActivity : AppCompatActivity() {
         onBackPressed()
         return true
     }
+
+    // Services Call
+
+    //    Add customer method
+    fun addCustomer(customerData: CustomerDataCollectionItem, onResult: (CustomerDataCollectionItem?) -> Unit){
+        val retrofit = RestEngine.buildService().create(CustomerService::class.java)
+        var result: Call<CustomerDataCollectionItem> = retrofit.addCustomer(customerData)
+
+        result.enqueue(object : Callback<CustomerDataCollectionItem> {
+            override fun onResponse(
+                call: Call<CustomerDataCollectionItem>,
+                response: Response<CustomerDataCollectionItem>
+            ) {
+                if (response.isSuccessful) {
+                    val addedCustomer = response.body()!!
+                    onResult(addedCustomer)
+                }
+                else if (response.code() == 500) {
+                    val errorResponse = Gson().fromJson(response.errorBody()!!.string()!!, RestApiError::class.java)
+
+                    Toast.makeText(this@RegisterActivity,errorResponse.errorDetails, Toast.LENGTH_LONG).show()
+                }
+                else {
+                    Toast.makeText(this@RegisterActivity, "Fallo al traer el item", Toast.LENGTH_LONG).show()
+                }
+            }
+
+            override fun onFailure(call: Call<CustomerDataCollectionItem>, t: Throwable) {
+                onResult(null)
+            }
+        })
+    }
+
+    //    Post Customer
+    private fun callServicePostCustomer(){
+        val customerInfo = CustomerDataCollectionItem( id = null,
+
+             dni = findViewById(R.id.txt_new_id),
+             nombre = findViewById(R.id.txt_new_name),
+             email = findViewById(R.id.txt_new_email),
+             mobile = findViewById(R.id.txt_new_phone_number),
+             password = findViewById(R.id.txt_new_password)
+
+        )
+
+//  ^^ Agregar controllers text de captura de datos
+
+        addCustomer(customerInfo){ if (it?.id != null){
+            Toast.makeText(this@RegisterActivity, "OK"+it?.id, Toast.LENGTH_LONG).show()
+        } else {
+            Toast.makeText(this@RegisterActivity, "Error",Toast.LENGTH_LONG).show()
+        }
+        }
+
+
+    }
+
+//    private fun callServicePostCustomer() {
+//        val fecha = "2021-04-10"
+//        val customerInfo = CustomerDataCollectionItem(  id = null,
+//            dni = 1344,
+//            nombre = "PDM",
+//            apellido = "Kotlin",
+//            fechaNacimiento = fecha
+//        )
+//
+//        addCustomer(customerInfo) {
+//            if (it?.id != null) {
+//                Toast.makeText(this@RegisterActivity,"OK"+it?.id,Toast.LENGTH_LONG).show()
+//            } else {
+//                Toast.makeText(this@RegisterActivity,"Error",Toast.LENGTH_LONG).show()
+//            }
+//        }
+//    }
+
+
+
 }
