@@ -103,9 +103,8 @@ class RegisterActivity : AppCompatActivity() {
             Toast.makeText(this@RegisterActivity, "OK"+ it.id, Toast.LENGTH_LONG).show()
         } else {
             Toast.makeText(this@RegisterActivity, "Error",Toast.LENGTH_LONG).show()
+                }
         }
-        }
-
 
     }
 
