@@ -9,11 +9,14 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.gson.Gson
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.databinding.ActivityMainMenuBinding
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.entities.CustomerDataCollectionItem
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.entities.RestApiError
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.restaurants.RestaurantActivity
 import kotlinx.android.synthetic.main.activity_main_menu.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -121,9 +124,39 @@ class MainMenuActivity : AppCompatActivity() {
         })
     }
 
+//    Add customer method
+    fun addCustomer(customerData: CustomerDataCollectionItem, onResult: (CustomerDataCollectionItem?) -> Unit){
+        val retrofit = RestEngine.buildService().create(CustomerService::class.java)
+        var result: Call<CustomerDataCollectionItem> = retrofit.addCustomer(customerData)
+
+        result.enqueue(object : Callback<CustomerDataCollectionItem>{
+            override fun onResponse(
+                call: Call<CustomerDataCollectionItem>,
+                response: Response<CustomerDataCollectionItem>
+            ) {
+                if (response.isSuccessful) {
+                    val addedCustomer = response.body()!!
+                    onResult(addedCustomer)
+                }
+                else if (response.code() == 500) {
+                    val errorResponse = Gson().fromJson(response.errorBody()!!.string()!!, RestApiError::class.java)
+
+                    Toast.makeText(this@MainMenuActivity,errorResponse.errorDetails, Toast.LENGTH_LONG).show()
+                }
+                else {
+                    Toast.makeText(this@MainMenuActivity, "Fallo al traer el item", Toast.LENGTH_LONG).show()
+                }
+            }
+
+            override fun onFailure(call: Call<CustomerDataCollectionItem>, t: Throwable) {
+                onResult(null)
+            }
+        })
+    }
+
 //    Post Customer
     private fun callServicePostCustomer(){
-        val fecha = "2021-8-20"
+    val fecha = "2021-8-20"
     val customerInfo = CustomerDataCollectionItem(null,
         dni= 888888888888,
         mobile= 99999999,
@@ -131,9 +164,77 @@ class MainMenuActivity : AppCompatActivity() {
         email="dan.mail@domain.com",
         password="dan.password"
         )
+//  ^^ Agregar controllers text de captura de datos
 
-//        addCustomer(customerInfo){
-//            if (it?)
-//        }
+        addCustomer(customerInfo){ if (it?.id != null){
+            Toast.makeText(this@MainMenuActivity, "OK"+it?.id, Toast.LENGTH_LONG).show()
+        } else {
+            Toast.makeText(this@MainMenuActivity, "Error",Toast.LENGTH_LONG).show()
+         }
+    }
+
+
+    }
+
+//    Put Costumer
+    private fun callServicePutCustomer(){
+        val fecha = "2021-8-20"
+        val customerInfo = CustomerDataCollectionItem(14,
+            dni= 888888888889,
+            mobile= 99999998,
+            nombre= "dani",
+            email="dani.mail@domain.com",
+            password="dani.password"
+        )
+    val retrofit = RestEngine.buildService().create(CustomerService::class.java)
+    var result: Call<CustomerDataCollectionItem> = retrofit.updateCustomer(customerInfo)
+
+    result.enqueue(object : Callback<CustomerDataCollectionItem> {
+        override fun onResponse(
+            call: Call<CustomerDataCollectionItem>,
+            response: Response<CustomerDataCollectionItem>
+        ) {
+            if (response.isSuccessful) {
+                val updatedCustomer = response.body()!!
+                Toast.makeText(this@MainMenuActivity, "OK"+response.body()!!.nombre,Toast.LENGTH_LONG).show()
+            }
+            else if (response.code() == 401){
+                Toast.makeText(this@MainMenuActivity,"Sesion Expirada", Toast.LENGTH_LONG).show()
+            }
+            else {
+                Toast.makeText(this@MainMenuActivity, "Fallo al traer el item", Toast.LENGTH_LONG).show()
+            }
+        }
+
+        override fun onFailure(call: Call<CustomerDataCollectionItem>, t: Throwable) {
+            Toast.makeText(this@MainMenuActivity, "Error", Toast.LENGTH_LONG).show()
+        }
+
+    })
+    }
+
+//    Delete Customer
+    private fun callServiceDeleteCustomer(){
+        val customerService:CustomerService = RestEngine.buildService().create(CustomerService::class.java)
+        var result: Call<ResponseBody> = customerService.deleteCustomer(14)
+
+        result.enqueue(object: Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    Toast.makeText(this@MainMenuActivity, "DELETE", Toast.LENGTH_LONG).show()
+                }
+                else if (response.code() == 401) {
+                    Toast.makeText(this@MainMenuActivity, "Sesion expirada", Toast.LENGTH_LONG).show()
+                }
+                else {
+                    Toast.makeText(this@MainMenuActivity, "Fallo al traer el item", Toast.LENGTH_LONG).show()
+                }
+             }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                Toast.makeText(this@MainMenuActivity, "Error", Toast.LENGTH_LONG).show()
+             }
+
+        })
     }
 }

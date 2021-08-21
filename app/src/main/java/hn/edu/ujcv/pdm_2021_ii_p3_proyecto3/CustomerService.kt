@@ -1,10 +1,10 @@
 package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3
 
-import android.telecom.Call
 import android.util.Log
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.entities.CustomerDataCollectionItem
 import okhttp3.ResponseBody
 import retrofit2.http.*
+import retrofit2.Call
 
 interface CustomerService {
 
