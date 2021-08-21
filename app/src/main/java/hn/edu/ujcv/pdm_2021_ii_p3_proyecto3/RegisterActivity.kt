@@ -30,22 +30,29 @@ class RegisterActivity : AppCompatActivity() {
 
 //        CRUD BUTTONS
 //        val registerButton = findViewById<Button>(R.id.button_register)
-        button_register.setOnClickListener { callServicePostCustomer()}
+        button_register.setOnClickListener {
+            valempty()
+//            callServicePostCustomer()
+        }
 
 
     }
     fun valempty(){
 
         when{
+            txt_new_id.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Identidad / Dni", Toast.LENGTH_SHORT).show()
             txt_new_name.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Nombre", Toast.LENGTH_SHORT).show()
             txt_new_email.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Email", Toast.LENGTH_SHORT).show()
             txt_new_password.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Contraseña", Toast.LENGTH_SHORT).show()
             txt_new_phone_number.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Numero de Telefono", Toast.LENGTH_SHORT).show()
-            else -> {
-                val intent = Intent(this, LoginActivity::class.java)
-                Toast.makeText(this,"Registrado exitosamete, por favor inicie sesion", Toast.LENGTH_LONG).show()
-                startActivity(intent)
-            }
+                else -> {
+                    callServicePostCustomer()
+                }
+        //            else -> {
+//                val intent = Intent(this, LoginActivity::class.java)
+//                Toast.makeText(this,"Registrado exitosamete, por favor inicie sesion", Toast.LENGTH_LONG).show()
+//                startActivity(intent)
+//            }
         }
     }
     override fun onSupportNavigateUp(): Boolean {
@@ -96,9 +103,7 @@ class RegisterActivity : AppCompatActivity() {
              password = findViewById(R.id.txt_new_password)
 
         )
-
 //  ^^ Agregar controllers text de captura de datos
-
         addCustomer(customerInfo){ if (it?.id != null){
             Toast.makeText(this@RegisterActivity, "OK"+ it.id, Toast.LENGTH_LONG).show()
         } else {
