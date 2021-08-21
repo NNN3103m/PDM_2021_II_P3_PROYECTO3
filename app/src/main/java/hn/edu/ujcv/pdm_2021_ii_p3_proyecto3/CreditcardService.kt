@@ -25,11 +25,11 @@ interface CreditcardService {
     @Headers("Content-Type: application/json")
 
     @POST("addresses/addCreditcard")
-    fun addCreditcards(@Body creditcardData: CreditcardDataCollectionItem): Call<CreditcardDataCollectionItem>
+    fun addCreditcard(@Body creditcardData: CreditcardDataCollectionItem): Call<CreditcardDataCollectionItem>
     @Headers("Content-Type: application/json")
 
     @PUT("addresses")
-    fun updateCreditcards(@Body creditcardData: CreditcardDataCollectionItem): Call<CreditcardDataCollectionItem>
+    fun updateCreditcard(@Body creditcardData: CreditcardDataCollectionItem): Call<CreditcardDataCollectionItem>
 
     @DELETE("addresses/delete/{id}")
     fun deleteCreditcard(@Path("id") idCreditcard: Long): Call<ResponseBody>

@@ -23,12 +23,12 @@ interface AddressService {
     @Headers("Content-Type: application/json")
 
     @POST("addresses/addAddress")
-    fun addCustomer(@Body addressData: AddressDataCollectionItem): Call<AddressDataCollectionItem>
+    fun addAddress(@Body addressData: AddressDataCollectionItem): Call<AddressDataCollectionItem>
     @Headers("Content-Type: application/json")
 
     @PUT("addresses")
-    fun updateCustomer(@Body addressData: AddressDataCollectionItem): Call<AddressDataCollectionItem>
+    fun updateAddress(@Body addressData: AddressDataCollectionItem): Call<AddressDataCollectionItem>
 
     @DELETE("addresses/delete/{id}")
-    fun deleteCustomer(@Path("id") idAdress: Long): Call<ResponseBody>
+    fun deleteAddress(@Path("id") idAddress: Long): Call<ResponseBody>
 }
