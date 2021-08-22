@@ -1,5 +1,6 @@
 package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
@@ -45,6 +46,9 @@ class RegisterActivity : AppCompatActivity() {
             txt_new_phone_number.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Numero de Telefono", Toast.LENGTH_SHORT).show()
                 else -> {
                     callServicePostCustomer()
+                    val intent = Intent(this, LoginActivity::class.java)
+                Toast.makeText(this,"Registrado exitosamete, por favor inicie sesion", Toast.LENGTH_LONG).show()
+                startActivity(intent)
                 }
         //            else -> {
 //                val intent = Intent(this, LoginActivity::class.java)
