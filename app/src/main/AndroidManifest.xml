@@ -21,7 +21,11 @@
         <activity android:name=".PaymentMethodsActivity" />
         <activity android:name=".MainMenuActivity" />
         <activity android:name=".products.ProductsActivity" />
+        <activity android:name=".products.ProductsTechActivity"/>
         <activity android:name=".restaurants.RestaurantActivity" />
+        <activity android:name=".bakery.BakeryActivity"/>
+        <activity android:name=".forhome.ForhomeActivity"/>
+        <activity android:name=".tech.TechActivity" />
         <activity android:name=".ShopActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".ProfileActivity" />

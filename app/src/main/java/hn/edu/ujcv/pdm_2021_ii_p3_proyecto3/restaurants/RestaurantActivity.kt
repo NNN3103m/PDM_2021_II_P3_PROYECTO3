@@ -22,13 +22,13 @@ class RestaurantActivity : AppCompatActivity() {
         //actionbar
         val actionbar = supportActionBar
         //set actionbar title
-        actionbar!!.title = "Comercios"
+        actionbar!!.title = "Restaurantes"
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
 
 
-        exam_toollbar.title = "Comercios"
+        exam_toollbar.title = "Restaurantes"
         exam_toollbar.setContentScrimColor(Color.DKGRAY)
 
 

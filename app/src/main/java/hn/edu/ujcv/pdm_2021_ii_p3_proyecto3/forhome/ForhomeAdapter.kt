@@ -1,4 +1,4 @@
-package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.restaurants
+package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.forhome
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -9,15 +9,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.R
-import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.products.ProductsActivity
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.products.ProductsForhomeActivity
 
-class RestaurantAdapter : RecyclerView.Adapter<RestaurantAdapter.ViewHolder>() {
-    private val restaurants = arrayOf(
-        "Pizza-Hut",
-        "Pollo Supremo",
-        "Matambritas",
-        "Campero",
-        "Baleadas Kennedy"
+class ForhomeAdapter : RecyclerView.Adapter<ForhomeAdapter.ViewHolder>() {
+    private val homes = arrayOf(
+        "Larach & Cia.",
+        "El Titan",
+        "Tiendas Centro",
+        "Indufesa",
+        "La mundial"
     )
 
     private val details = arrayOf(
@@ -29,25 +29,25 @@ class RestaurantAdapter : RecyclerView.Adapter<RestaurantAdapter.ViewHolder>() {
 
     )
     private val images = intArrayOf(
-        R.drawable.pzh,
-        R.drawable.plls,
-        R.drawable.mtb,
-        R.drawable.cmp,
-        R.drawable.bke
+        R.drawable.lara,
+        R.drawable.tita,
+        R.drawable.cent,
+        R.drawable.indu,
+        R.drawable.lamu
     )
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.card_layout,viewGroup, false)
+            .inflate(R.layout.cardforhome_layout,viewGroup, false)
         return ViewHolder(v)
     }
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        var restaurantImage: ImageView
-        var restaurantName: TextView
-        var restaurantDetail: TextView
+        var homeImage: ImageView
+        var homeName: TextView
+        var homeDetail: TextView
         init {
-            restaurantImage = itemView.findViewById(R.id.restaurant_image)
-            restaurantName = itemView.findViewById(R.id.restaurant_name)
-            restaurantDetail = itemView.findViewById(R.id.restaurant_detail)
+            homeImage = itemView.findViewById(R.id.forhome_image)
+            homeName = itemView.findViewById(R.id.forhome_name)
+            homeDetail = itemView.findViewById(R.id.forhome_detail)
 
 
             itemView.setOnClickListener { v: View ->
@@ -59,18 +59,18 @@ class RestaurantAdapter : RecyclerView.Adapter<RestaurantAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        viewHolder.restaurantName.text = restaurants[position]
-        viewHolder.restaurantDetail.text = details[position]
-        viewHolder.restaurantImage.setImageResource(images[position])
+        viewHolder.homeName.text = homes[position]
+        viewHolder.homeDetail.text = details[position]
+        viewHolder.homeImage.setImageResource(images[position])
 
         /// Esto codigo de abajo fue el unico cambio que hice
         viewHolder.itemView.setOnClickListener { v ->
-            val intent = Intent(v.context, ProductsActivity::class.java)
+            val intent = Intent(v.context, ProductsForhomeActivity::class.java)
             v.context.startActivity(intent)
         }
     }
 
     override fun getItemCount(): Int {
-        return restaurants.size
+        return homes.size
     }
 }

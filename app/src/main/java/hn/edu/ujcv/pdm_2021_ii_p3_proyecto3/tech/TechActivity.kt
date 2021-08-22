@@ -1,35 +1,34 @@
-package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.products
+package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.tech
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.R
-import kotlinx.android.synthetic.main.activity_products.*
+import kotlinx.android.synthetic.main.activity_tech.*
 import kotlinx.android.synthetic.main.content_main.*
 
-class ProductsActivity : AppCompatActivity() {
+class TechActivity:AppCompatActivity() {
     private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<ProductsAdapter.ViewHolder>? = null
+    private var adapter: RecyclerView.Adapter<TechAdapter.ViewHolder>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_products)
-
+        setContentView(R.layout.activity_tech)
 
         //actionbar
         val actionbar = supportActionBar
         //set actionbar title
-        actionbar!!.title = "Productos"
+        actionbar!!.title = "Tecnologia"
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
 
 
-        products_toollbar.title = "Nombre del comercio"
-        products_toollbar.setContentScrimColor(Color.DKGRAY)
+        tech_toollbar.title = "Tecnologia"
+        tech_toollbar.setContentScrimColor(Color.DKGRAY)
 
 
 
@@ -37,7 +36,7 @@ class ProductsActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
 
 
-        adapter = ProductsAdapter()
+        adapter = TechAdapter()
         recyclerView.adapter = adapter
     }
 

@@ -10,10 +10,13 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.gson.Gson
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.bakery.BakeryActivity
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.databinding.ActivityMainMenuBinding
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.entities.CustomerDataCollectionItem
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.entities.RestApiError
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.forhome.ForhomeActivity
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.restaurants.RestaurantActivity
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.tech.TechActivity
 import kotlinx.android.synthetic.main.activity_main_menu.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import okhttp3.ResponseBody
@@ -58,15 +61,15 @@ class MainMenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
         imageBakery.setOnClickListener{
-            val intent = Intent(this, RestaurantActivity::class.java)
+            val intent = Intent(this, BakeryActivity::class.java)
             startActivity(intent)
         }
         imageHome.setOnClickListener{
-            val intent = Intent(this, RestaurantActivity::class.java)
+            val intent = Intent(this, ForhomeActivity::class.java)
             startActivity(intent)
         }
         imageTechnology.setOnClickListener{
-            val intent = Intent(this, RestaurantActivity::class.java)
+            val intent = Intent(this, TechActivity::class.java)
             startActivity(intent)
         }
 
