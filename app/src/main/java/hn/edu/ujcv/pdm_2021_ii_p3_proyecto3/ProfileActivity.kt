@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.gson.Gson
-import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.bakery.bakeryproducts.ProductsBakeryBasiliosActivity
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.entities.AddressDataCollectionItem
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.entities.RestApiError
 import kotlinx.android.synthetic.main.activity_profile.*
@@ -60,7 +59,7 @@ class ProfileActivity : AppCompatActivity() {
                 call: Call<List<AddressDataCollectionItem>>,
                 response: Response<List<AddressDataCollectionItem>>
             ) {
-                Toast.makeText(this@ProfileActivity, "Ok"+response.body()!!.get(0).description,Toast.LENGTH_LONG)
+                Toast.makeText(this@ProfileActivity, "Ok"+response.body()!!.get(0).addressId,Toast.LENGTH_LONG)
             }
         })
     }
@@ -99,14 +98,12 @@ class ProfileActivity : AppCompatActivity() {
     private fun callServicePostAddress(){
     val addressInfo = AddressDataCollectionItem(addressId = 1,
 
-         description = findViewById(R.id.txt_new_id),
          country = findViewById(R.id.txt_new_id),
          department = findViewById(R.id.txt_new_id),
          city = findViewById(R.id.txt_new_id),
          postalCode = findViewById(R.id.txt_new_id),
          streetName = findViewById(R.id.txt_new_id),
          houseNumber = findViewById(R.id.txt_new_id),
-         customerDni = findViewById(R.id.txt_new_id),
         )
 //  ^^ Agregar controllers text de captura de datos
 
@@ -124,14 +121,12 @@ class ProfileActivity : AppCompatActivity() {
     private fun callServicePutAddress(){
         val addressInfo = AddressDataCollectionItem(addressId = 1,
 
-            description = findViewById(R.id.txt_new_id),
             country = findViewById(R.id.txt_new_id),
             department = findViewById(R.id.txt_new_id),
             city = findViewById(R.id.txt_new_id),
             postalCode = findViewById(R.id.txt_new_id),
             streetName = findViewById(R.id.txt_new_id),
             houseNumber = findViewById(R.id.txt_new_id),
-            customerDni = findViewById(R.id.txt_new_id),
         )
     val retrofit = RestEngine.buildService().create(AddressService::class.java)
     var result: Call<AddressDataCollectionItem> = retrofit.updateAddress(addressInfo)
@@ -143,7 +138,7 @@ class ProfileActivity : AppCompatActivity() {
         ) {
             if (response.isSuccessful) {
                 val updatedAddress = response.body()!!
-                Toast.makeText(this@ProfileActivity, "OK"+response.body()!!.description,Toast.LENGTH_LONG).show()
+                Toast.makeText(this@ProfileActivity, "OK"+response.body()!!.addressId,Toast.LENGTH_LONG).show()
             }
             else if (response.code() == 401){
                 Toast.makeText(this@ProfileActivity,"Sesion Expirada", Toast.LENGTH_LONG).show()
