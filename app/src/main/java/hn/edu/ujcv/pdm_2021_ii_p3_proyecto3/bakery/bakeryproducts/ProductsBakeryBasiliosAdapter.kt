@@ -1,4 +1,4 @@
-package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.products
+package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.bakery.bakeryproducts
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,34 +9,27 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.R
 
-class ProductsBakeryAdapter: RecyclerView.Adapter<ProductsBakeryAdapter.ViewHolder>(){
+class ProductsBakeryBasiliosAdapter: RecyclerView.Adapter<ProductsBakeryBasiliosAdapter.ViewHolder>(){
 
     private val products = arrayOf(
         "Producto 1",
         "Producto 2",
         "Producto 3",
-        "Producto 4",
-        "Producto 5"
     )
 
     private val products_details = arrayOf(
-        "Manzanas",
-        "Peras",
-        "Melones",
-        "Nances",
-        "Mangos"
-
+        "Precio: ",
+        "Precio: ",
+        "Precio: ",
     )
     private val products_images = intArrayOf(
-        R.drawable.restaurant,
-        R.drawable.restaurant,
-        R.drawable.restaurant,
-        R.drawable.restaurant,
-        R.drawable.restaurant
+        R.drawable.b1,
+        R.drawable.b2,
+        R.drawable.bb3
     )
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.card_layout_products,viewGroup, false)
+            .inflate(R.layout.cardbakeryproduct_layout,viewGroup, false)
         return ViewHolder(v)
     }
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
@@ -44,9 +37,9 @@ class ProductsBakeryAdapter: RecyclerView.Adapter<ProductsBakeryAdapter.ViewHold
         var productsName: TextView
         var productsDetail: TextView
         init {
-            productsImage = itemView.findViewById(R.id.product_image)
-            productsName = itemView.findViewById(R.id.product_name)
-            productsDetail = itemView.findViewById(R.id.product_detail)
+            productsImage = itemView.findViewById(R.id.bakeryproduct_image)
+            productsName = itemView.findViewById(R.id.bakeryproduct_name)
+            productsDetail = itemView.findViewById(R.id.bakeryproduct_detail)
 
             itemView.setOnClickListener { v: View ->
                 var position: Int = getAdapterPosition()

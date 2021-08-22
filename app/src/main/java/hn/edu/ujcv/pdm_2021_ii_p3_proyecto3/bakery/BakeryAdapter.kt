@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.R
-import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.products.ProductsBakeryActivity
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.bakery.bakeryproducts.ProductsBakeryBasiliosActivity
 
 class BakeryAdapter: RecyclerView.Adapter<BakeryAdapter.ViewHolder>() {
     private val bakery = arrayOf(
@@ -65,7 +65,7 @@ class BakeryAdapter: RecyclerView.Adapter<BakeryAdapter.ViewHolder>() {
 
         /// Esto codigo de abajo fue el unico cambio que hice
         viewHolder.itemView.setOnClickListener { v ->
-            val intent = Intent(v.context, ProductsBakeryActivity::class.java)
+            val intent = Intent(v.context, ProductsBakeryBasiliosActivity::class.java)
             v.context.startActivity(intent)
         }
     }

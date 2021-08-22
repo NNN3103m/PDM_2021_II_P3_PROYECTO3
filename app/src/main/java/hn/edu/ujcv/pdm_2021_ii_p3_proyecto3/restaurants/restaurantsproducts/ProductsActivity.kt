@@ -1,19 +1,19 @@
-package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.products
+package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.restaurants.restaurantsproducts
 
 import android.graphics.Color
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.R
 import kotlinx.android.synthetic.main.activity_products.*
 import kotlinx.android.synthetic.main.content_main.*
 
-class ProductsBakeryActivity : AppCompatActivity() {
+class ProductsActivity : AppCompatActivity() {
     private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<ProductsBakeryAdapter.ViewHolder>? = null
+    private var adapter: RecyclerView.Adapter<ProductsAdapter.ViewHolder>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_products)
@@ -22,7 +22,7 @@ class ProductsBakeryActivity : AppCompatActivity() {
         //actionbar
         val actionbar = supportActionBar
         //set actionbar title
-        actionbar!!.title = "Productos Tecnologicos"
+        actionbar!!.title = "Productos"
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
@@ -37,7 +37,7 @@ class ProductsBakeryActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
 
 
-        adapter = ProductsBakeryAdapter()
+        adapter = ProductsAdapter()
         recyclerView.adapter = adapter
     }
 

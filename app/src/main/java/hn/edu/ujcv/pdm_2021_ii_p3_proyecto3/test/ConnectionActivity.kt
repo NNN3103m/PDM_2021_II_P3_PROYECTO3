@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.*
-import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.products.ProductsActivity
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.restaurants.restaurantsproducts.ProductsActivity
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.restaurants.RestaurantActivity
 import kotlinx.android.synthetic.main.activity_connection.*
 

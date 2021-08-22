@@ -20,10 +20,11 @@
         <activity android:name=".CreditCardFormActivity" />
         <activity android:name=".PaymentMethodsActivity" />
         <activity android:name=".MainMenuActivity" />
-        <activity android:name=".products.ProductsActivity" />
+        <activity android:name=".restaurants.restaurantsproducts.ProductsActivity" />
         <activity android:name=".products.ProductsTechActivity"/>
         <activity android:name=".restaurants.RestaurantActivity" />
         <activity android:name=".bakery.BakeryActivity"/>
+        <activity android:name=".bakery.bakeryproducts.ProductsBakeryBasiliosActivity"/>
         <activity android:name=".forhome.ForhomeActivity"/>
         <activity android:name=".tech.TechActivity" />
         <activity android:name=".ShopActivity" />

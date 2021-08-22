@@ -1,35 +1,35 @@
-package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.products
+package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.bakery.bakeryproducts
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.R
-import kotlinx.android.synthetic.main.activity_products.*
+import kotlinx.android.synthetic.main.activity_bakery.*
 import kotlinx.android.synthetic.main.content_main.*
 
-class ProductsActivity : AppCompatActivity() {
+class ProductsBakeryBasiliosActivity : AppCompatActivity() {
     private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<ProductsAdapter.ViewHolder>? = null
+    private var basiliosAdapter: RecyclerView.Adapter<ProductsBakeryBasiliosAdapter.ViewHolder>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_products)
+        setContentView(R.layout.activity_bakery)
 
 
         //actionbar
         val actionbar = supportActionBar
         //set actionbar title
-        actionbar!!.title = "Productos"
+        actionbar!!.title = "Productos Tecnologicos"
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
 
 
-        products_toollbar.title = "Nombre del comercio"
-        products_toollbar.setContentScrimColor(Color.DKGRAY)
+        bakery_toolbar.title = "Nombre del comercio"
+        bakery_toolbar.setContentScrimColor(Color.DKGRAY)
 
 
 
@@ -37,8 +37,8 @@ class ProductsActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
 
 
-        adapter = ProductsAdapter()
-        recyclerView.adapter = adapter
+        basiliosAdapter = ProductsBakeryBasiliosAdapter()
+        recyclerView.adapter = basiliosAdapter
     }
 
 

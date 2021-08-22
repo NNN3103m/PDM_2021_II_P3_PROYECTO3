@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.R
-import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.products.ProductsActivity
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.restaurants.restaurantsproducts.ProductsActivity
 
 class RestaurantAdapter : RecyclerView.Adapter<RestaurantAdapter.ViewHolder>() {
     private val restaurants = arrayOf(

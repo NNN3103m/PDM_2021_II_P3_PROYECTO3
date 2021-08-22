@@ -1,4 +1,4 @@
-package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.products
+package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.restaurants.restaurantsproducts
 
 import android.view.LayoutInflater
 import android.view.View
@@ -12,31 +12,25 @@ import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.R
 
 class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
     private val products = arrayOf(
-        "Producto 1",
-        "Producto 2",
-        "Producto 3",
-        "Producto 4",
-        "Producto 5"
+        "Pizza Pepperoni",
+        "Pizza 4 Estaciones",
+        "Pan de ajo"
     )
 
     private val products_details = arrayOf(
-        "Manzanas",
-        "Peras",
-        "Melones",
-        "Nances",
-        "Mangos"
+        "Precio L.",
+        "Precio L.",
+        "Precio L."
 
     )
     private val products_images = intArrayOf(
-        R.drawable.restaurant,
-        R.drawable.restaurant,
-        R.drawable.restaurant,
-        R.drawable.restaurant,
-        R.drawable.restaurant
+        R.drawable.pzzzz,
+        R.drawable.pzz,
+        R.drawable.pzzz
     )
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.card_layout_products,viewGroup, false)
+            .inflate(R.layout.cardproduct_layout,viewGroup, false)
         return ViewHolder(v)
     }
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
@@ -44,9 +38,9 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
         var productsName: TextView
         var productsDetail: TextView
         init {
-            productsImage = itemView.findViewById(R.id.product_image)
-            productsName = itemView.findViewById(R.id.product_name)
-            productsDetail = itemView.findViewById(R.id.product_detail)
+            productsImage = itemView.findViewById(R.id.restaurantyproduct_image)
+            productsName = itemView.findViewById(R.id.restaurantyproduct_name)
+            productsDetail = itemView.findViewById(R.id.restaurantyproduct_detail)
 
             itemView.setOnClickListener { v: View ->
                 var position: Int = getAdapterPosition()
