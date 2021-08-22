@@ -1,11 +1,14 @@
 package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.gson.Gson
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.bakery.bakeryproducts.ProductsBakeryBasiliosActivity
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.entities.AddressDataCollectionItem
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.entities.RestApiError
+import kotlinx.android.synthetic.main.activity_profile.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,6 +25,19 @@ class ProfileActivity : AppCompatActivity() {
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
+
+        button_paymentmethods.setOnClickListener { paymentmethods() }
+        button_myadresses.setOnClickListener { myadresses() }
+    }
+
+    private fun myadresses() {
+        val intent = Intent(this, AddressActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun paymentmethods() {
+        val intent = Intent(this, CreditCardFormActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onSupportNavigateUp(): Boolean {
