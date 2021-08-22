@@ -9,7 +9,7 @@ data class TransactionDataCollectionItem(
     val customerDni:String="",
     val customerMobile:Int,
     val paymentMethodId:Int,
-    val creditcardNumber: BigInteger,
+    val creditcardNumber: String,
     val shopName:String="",
     val shopId:Int,
     val shopLocalePhoneNumber:Int,

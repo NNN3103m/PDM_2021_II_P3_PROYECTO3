@@ -70,7 +70,7 @@
                 android:layout_marginEnd="12dp"
                 android:fontFamily="sans-serif"
                 android:hint="Nombre del propietario"
-                android:inputType="number" />
+                android:inputType="text" />
 
             <ImageView
                 android:layout_width="45dp"
@@ -109,7 +109,7 @@
                 android:layout_marginTop="162dp"
                 android:layout_marginEnd="12dp"
                 android:fontFamily="sans-serif"
-                android:hint="Fecha de vencimiento"
+                android:hint="Fecha de vencimiento MM/AA"
                 android:inputType="date" />
 
             <ImageView
@@ -130,7 +130,7 @@
                 android:layout_marginEnd="12dp"
                 android:fontFamily="sans-serif"
                 android:hint="Codigo de Seguridad / CVV"
-                android:inputType="number"
+                android:inputType="numberPassword"
                 android:maxLength="3" />
 
             <ImageView

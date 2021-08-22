@@ -20,17 +20,17 @@ interface CreditcardService {
     fun getCreditcardsByNameTag(@Path("nametag") nametagCreditcard: String): Call<CreditcardDataCollectionItem>
     @Headers("Content-Type: application/json")
 
-    @GET("creditcards/customerdni/{customerdni}")
-    fun getCreditcardsByCustomerDni(@Path("customerdni") customerDni: Int): Call<CreditcardDataCollectionItem>
-    @Headers("Content-Type: application/json")
+//    @GET("creditcards/customerdni/{customerdni}")
+//    fun getCreditcardsByCustomerDni(@Path("customerdni") customerDni: Int): Call<CreditcardDataCollectionItem>
+//    @Headers("Content-Type: application/json")
 
-    @POST("addresses/addCreditcard")
+    @POST("creditcards/addCreditcard")
     fun addCreditcard(@Body creditcardData: CreditcardDataCollectionItem): Call<CreditcardDataCollectionItem>
     @Headers("Content-Type: application/json")
 
-    @PUT("addresses")
+    @PUT("creditcards")
     fun updateCreditcard(@Body creditcardData: CreditcardDataCollectionItem): Call<CreditcardDataCollectionItem>
 
-    @DELETE("addresses/delete/{id}")
+    @DELETE("creditcards/delete/{id}")
     fun deleteCreditcard(@Path("id") idCreditcard: Long): Call<ResponseBody>
 }

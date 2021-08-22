@@ -1,11 +1,16 @@
 package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.Toast
 import com.google.gson.Gson
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.entities.CreditcardDataCollectionItem
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.entities.RestApiError
+import kotlinx.android.synthetic.main.activity_credit_card_form.*
+import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.activity_register.txt_new_id
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,6 +27,27 @@ class CreditCardFormActivity : AppCompatActivity() {
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
+
+        button_add_card.setOnClickListener {
+            valempty()
+//            callServicePostCustomer()
+        }
+    }
+
+    fun valempty(){
+
+        when{
+            txt_cc_propietary.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Identidad / Dni", Toast.LENGTH_SHORT).show()
+            txt_cc_ccnumber.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar el numero de la tarjeta", Toast.LENGTH_SHORT).show()
+            txt_cc_expiratedate.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar la fecha de vencimiento", Toast.LENGTH_SHORT).show()
+            txt_cc_ccv.text.isEmpty()  -> Toast.makeText(this,"Debe ingresar su Clave de Seguridad", Toast.LENGTH_SHORT).show()
+            else -> {
+                callServicePostCreditcard()
+                val intent = Intent(this, ProfileActivity::class.java)
+                Toast.makeText(this,"Registrado exitosamete, por favor inicie sesion", Toast.LENGTH_LONG).show()
+                startActivity(intent)
+            }
+        }
     }
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
@@ -62,11 +88,10 @@ class CreditCardFormActivity : AppCompatActivity() {
     private fun callServicePostCreditcard(){
     val creditcardInfo = CreditcardDataCollectionItem(
 
-         creditcardNumber = findViewById(R.id.txt_new_id),
-         customerDni = findViewById(R.id.txt_new_id),
-         cvv = findViewById(R.id.txt_new_id),
-         expiration_date = findViewById(R.id.txt_new_id),
-         nametag = findViewById(R.id.txt_new_id),
+         creditcardNumber = (findViewById(R.id.txt_cc_ccnumber) as EditText).getText().toString(),
+         cvv = (findViewById(R.id.txt_cc_ccv) as EditText).getText().toString(),
+         expiration_date = (findViewById(R.id.txt_cc_expiratedate) as EditText).getText().toString(),
+         nametag = (findViewById(R.id.txt_cc_propietary) as EditText).getText().toString(),
         )
 ////  ^^ Agregar controllers text de captura de datos
 

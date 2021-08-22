@@ -50,11 +50,6 @@ class RegisterActivity : AppCompatActivity() {
                 Toast.makeText(this,"Registrado exitosamete, por favor inicie sesion", Toast.LENGTH_LONG).show()
                 startActivity(intent)
                 }
-        //            else -> {
-//                val intent = Intent(this, LoginActivity::class.java)
-//                Toast.makeText(this,"Registrado exitosamete, por favor inicie sesion", Toast.LENGTH_LONG).show()
-//                startActivity(intent)
-//            }
         }
     }
     override fun onSupportNavigateUp(): Boolean {
