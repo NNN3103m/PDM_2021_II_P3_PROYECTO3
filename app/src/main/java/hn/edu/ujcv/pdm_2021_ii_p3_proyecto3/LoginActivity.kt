@@ -3,6 +3,7 @@ package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.Toast
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.test.ConnectionActivity
 import kotlinx.android.synthetic.main.activity_login.*
@@ -16,7 +17,7 @@ class LoginActivity : AppCompatActivity() {
         //        BtnHandlers
         btnlogin.setOnClickListener{
             valempty()
-            validateCreds()
+//            validateCreds()
         }
         btnregister.setOnClickListener{
             val intent = Intent(this, RegisterActivity::class.java)
@@ -32,19 +33,21 @@ class LoginActivity : AppCompatActivity() {
     fun valempty(){
         val usermail = txt_userEmail.text.toString()
         val userpassword = txt_userEmail.text.toString()
-        if (usermail.length == 0 || userpassword.length == 0){
-            Toast.makeText(this,"Debe ingresar un correo y una clave.", Toast.LENGTH_SHORT).show()
+        if (usermail.length == 0 || userpassword.length == 0 || usermail.isEmpty() || usermail.isBlank() || userpassword.isBlank() || userpassword.isEmpty()){
+            Toast.makeText(this,"Debe ingresar un correo y una clave.", Toast.LENGTH_LONG).show()
+        } else {
+            validateCreds()
         }
     }
 
     fun validateCreds(){
-        var usermail = txt_userEmail.text.toString()
-        var userpassword = txt_userEmail.text.toString()
-        if (usermail == "admin" || userpassword == "admin"){
+        var usermail = (findViewById(R.id.txt_userEmail) as EditText).getText().toString()
+        var userpassword = (findViewById(R.id.txt_userPassword) as EditText).getText().toString()
+        if (usermail == "admin" && userpassword == "admin"){
             val intent = Intent(this, MainMenuActivity::class.java)
             startActivity(intent)
         } else {
-            Toast.makeText(this,"Credenciales inválidas. Intenta nuevamente.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"Credenciales inválidas. Intenta nuevamente.", Toast.LENGTH_LONG).show()
         }
     }
 }
